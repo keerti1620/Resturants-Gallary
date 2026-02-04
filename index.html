@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Explorer</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1e293b;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background: #0f172a;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* ===== OFFER BAR ===== */
+.marquee-container {
+    background: #fde68a;
+    color: #92400e;
+    font-weight: 600;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-container p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 14s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== VIDEO BANNER ===== */
+.video-banner {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== INTRO TEXT ===== */
+.intro-text {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 40px 20px 10px;
+}
+
+.intro-sub {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    padding: 0 40px 60px;
+}
+
+/* ===== RESTAURANT GRID ===== */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* ===== CARD ===== */
+.restaurant-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CARD INFO */
+.restaurant-card .info {
+    padding: 16px;
+}
+
+.restaurant-card h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.restaurant-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+/* RATING BADGE */
+.rating {
+    margin-top: 8px;
+    display: inline-block;
+    background: #22c55e;
+    color: white;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 14px 20px;
+    }
+    main {
+        padding: 0 20px 40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to Restaurants Gallery</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- OFFER BAR -->
+<div class="marquee-container">
+    <p>🔥 Flat 20% OFF on Top Restaurants • Limited Time Deal 🔥</p>
+</div>
+
+<!-- VIDEO BANNER -->
+<div class="video-banner">
+    <video id="heroVideo" autoplay muted playsinline preload="auto">
+        <source src="media/resturant ad.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+</div>
+
+
+<!-- INTRO -->
+<div class="intro-text">Discover the Best Restaurants Near You</div>
+<div class="intro-sub">Book tables, explore menus, and enjoy exclusive offers</div>
+
+<main>
+<section>
+
+<a href="restaurant-details.html?name=goa" class="restaurant-card">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/db/7d/49/restaurant-with-a-sea.jpg">
+    <div class="info">
+        <h3>Fisherman's Wharf</h3>
+        <p>📍 Goa</p>
+        <span class="rating">⭐ 4.6</span>
+    </div>
+</a>
+
+<a href="restaurant-details.html?name=kerala" class="restaurant-card">
+    <img src="https://img1.wsimg.com/isteam/ip/e09b1766-c8d0-4584-b011-9e8b3e5f7c46/kerala-cafe-baner-pune-kerala-restaurants-aowb.jpg">
+    <div class="info">
+        <h3>Villa Maya</h3>
+        <p>📍 Kerala</p>
+        <span class="rating">⭐ 4.5</span>
+    </div>
+</a>
+
+<a href="restaurant-details.html?name=hyderabad" class="restaurant-card">
+    <img src="https://c8.alamy.com/comp/DAXPYX/people-in-the-restaurant-eat-street-hyderabad-andhra-pradesh-india-DAXPYX.jpg">
+    <div class="info">
+        <h3>Paradise Biryani</h3>
+        <p>📍 Hyderabad</p>
+        <span class="rating">⭐ 4.7</span>
+    </div>
+</a>
+
+<a href="restaurant-details.html?name=amritsar" class="restaurant-card">
+    <img src="https://i.ytimg.com/vi/y6BiTxtPwaY/hq720.jpg">
+    <div class="info">
+        <h3>Kesar Da Dhaba</h3>
+        <p>📍 Amritsar</p>
+        <span class="rating">⭐ 4.4</span>
+    </div>
+</a>
+
+<a href="restaurant-details.html?name=chennai" class="restaurant-card">
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/03/61/a0/03/hotel-saravana-bhavan.jpg">
+    <div class="info">
+        <h3>Saravana Bhavan</h3>
+        <p>📍 Chennai</p>
+        <span class="rating">⭐ 4.3</span>
+    </div>
+</a>
+
+</section>
+</main>
+
+<script>
+const video = document.getElementById("heroVideo");
+const STOP_TIME = 12.5; // set before logo appears
+
+video.addEventListener("loadedmetadata", () => {
+    video.play();
+});
+
+video.addEventListener("timeupdate", () => {
+    if (video.currentTime >= STOP_TIME) {
+        video.pause();
+        video.currentTime = 0;
+        video.play();
+    }
+});
+</script>
+
+</body>
+</html>
